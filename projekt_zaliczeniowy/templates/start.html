@@ -1,0 +1,578 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {padding: 2px 16px;}
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static "style.css" %}" />
+    <script src="{% static "jquery-2.2.3.js" %}"></script>
+    <meta charset="UTF-8">
+    <title>WYBORY 2016</title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+{#    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>#}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+
+{#    <script type="text/javascript">#}
+{#        google.charts.load('current', {'packages': ['geochart']});#}
+{#        google.charts.setOnLoadCallback(drawRegionsMap);#}
+{##}
+{#        function drawRegionsMap() {#}
+{#            var data = google.visualization.arrayToDataTable([#}
+{#                    ['State',   'Procent {{ kandydaci.0 }}', 'Procent {{ kandydaci.1}}'],#}
+{#                    {% for p, k in slownik.items %}#}
+{#                        ['{{ p.nazwa }}', {{ k.2 }}, {{ k.4 }}],#}
+{#                    {% endfor %}#}
+{##}
+{#            ]);#}
+{##}
+{#            var options = {#}
+{#                region: 'PL',#}
+{#                displayMode: 'regions',#}
+{#                resolution: 'provinces',#}
+{#                colorAxis: {colors: ['orange','blue']}#}
+{#            };#}
+{##}
+{#            var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));#}
+{#            chart.draw(data, options);#}
+{#        };#}
+{#    </script>#}
+    <script>
+        kandydaci = [];
+        kandydaci_namespace = { wszystkie_glosy:0, kandydaci };
+
+        function pokazKandydats(kandydats) {
+
+
+            console.log(kandydaci_namespace.wszystkie_glosy);
+            var table = '<div id="wyniki">';
+            for (var i = 0; i < kandydats.length; i++) {
+                kandydaci_namespace.kandydaci[i] = kandydats[i];
+                table += '<h3>' + kandydats[i].imie + ' ' + kandydats[i].nazwisko + '</h3>';
+                table += '<h4>{#<meter id=kandydat_' + i + ' class="kandydat druk" value=' + kandydats[i].liczba_glosow +#}
+                        {#' max=' + kandydaci_namespace.wszystkie_glosy + '></meter>#} '</h4>';
+            }
+            table += '</div>';
+            console.log(table);
+            return table;
+        }
+        function createTable(gminy) {
+                var table;
+                table = "<table class=\"modal-table\">\
+                        <tr class=\"woj\" id=\"-1\"><td class=\"woj\" colspan=\"8\">Rozkład głosów w gminach</td></tr>\
+                        <tr id=\"-1\">\
+                            <th>Gmina</th>\
+                            <th>Liczba głosów ważnych</th>\
+                            <th>Liczba głosów 2  </th>\
+                            <th>Procent głosów s </th>\
+                            <th>Liczba głosów kandydata/ważnych</th>\
+                            <th>Procent głosów  </th>\
+                            <th>Liczba głosów</th>\
+                            <th></th>\
+                        </tr>";
+                for (var i = 0; i < gminy.length; i++) {
+                    table +=
+                    '<tr id="' + gminy[i].id + '" value="' + gminy[i].date + '">\
+                        <td>' + gminy[i].name + '</td>\
+                        <td id="all" value="' + gminy[i].valid_votes + '">' + gminy[i].valid_votes + '</td>\
+                        <td id="c1" value="' + gminy[i].c1 + '">' + gminy[i].c1 + '</td>\
+                        <td>' + gminy[i].pc1 + '</td>\
+                        <td><progress class="table" max="' + gminy[i].valid_votes +
+                            '" value="' + gminy[i].c1+ '"></progress></td> \
+                        <td>' + gminy[i].pc2 + '</td>\
+                        <td id="c2" value="' + gminy[i].c2 + '">' + gminy[i].c2 + '</td> \
+                        <td>\
+                        <button type="button" id="modify-button" class="modify-municipality">Modify</button>\
+                        </td>\
+                    </tr>'
+                }
+                table += '</table>';
+
+                return table;
+            }
+        function pokaz_wyniki() {
+            var csrftoken = $.cookie('csrftoken');
+
+            function csrfSafeMethod(method) {
+                // these HTTP methods do not require CSRF protection
+                return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+            }
+
+            $.ajaxSetup({
+                beforeSend: function(xhr, settings) {
+                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                }
+            });
+
+            $.ajax({
+                type:'GET',
+                url: 'kandydats/',
+                contentType: "application/json",
+                processData: false,
+                dataType: "json",
+                success: function(json) {
+                    alert('zadzialalo');
+                    console.log('przed');
+                    var moje_w = $("#wyniki");
+                    $(moje_w).replaceWith(pokazKandydats(json));
+                    console.log('po');
+
+                },
+                error: function(){
+                    alert('nieudalosie');
+                }
+            });
+        }
+
+        function logFunction() {
+        var csrftoken = $.cookie('csrftoken');
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        $.ajax({
+            type:"POST",
+            url:"/projekt_zaliczeniowy/login/",
+            data: JSON.stringify({
+                'username': document.getElementById("login").value,
+                'password': document.getElementById("password").value}),
+            contentType: "application/json",
+            processData: false,
+            success:function(data){
+                d = JSON.parse(data);
+                if (d.action == 'login') {
+                    if (d.result == 'success') {
+                        document.getElementById("login").style.display = 'none';
+                        document.getElementById("password").style.display = 'none';
+                        document.getElementById("login_button").value = "Wyloguj się";
+                        alert('Zostałeś pomyślnie zalogowany.');
+                    } else {
+                        alert('Błędny login lub hasło.');
+                    }
+                } else {
+                    document.getElementById("login").style.display = '';
+                    document.getElementById("password").style.display = '';
+                    document.getElementById("login_button").value = "Zaloguj się";
+                    alert('Zostałeś pomyślnie wylogowany.');
+                }
+            },
+            error:function(data){
+                alert('POST error');
+                console.log(data);
+            }
+        });
+    }
+    </script>
+
+    <script type="text/javascript">
+        (function ($) {
+
+
+
+            $(document).ready(function () {
+
+                function submit(communityId, firstVotes, secondVotes, allVotes, dateModified, result, callback) {
+                    var csrftoken = $.cookie('csrftoken');
+
+                    function csrfSafeMethod(method) {
+                        // these HTTP methods do not require CSRF protection
+                        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+                    }
+
+                    $.ajaxSetup({
+                        beforeSend: function(xhr, settings) {
+                            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                            }
+                        }
+                    });
+
+                    $.ajax({
+                        type:"POST",
+                        url:"/projekt_zaliczeniowy/submit/",
+                        data: JSON.stringify({
+                            'all_votes': allVotes,
+                            'community_id': communityId,
+                            'first_votes': firstVotes,
+                            'second_votes': secondVotes,
+                            'date_modified': dateModified}),
+                        contentType: "application/json",
+                        processData: false,
+                        success:function(data){
+                            if(callback) {
+                                callback(communityId, firstVotes, secondVotes, dateModified, data, result);
+                            }
+                        },
+                        error:function(data){
+                            alert('POST error');
+                            console.log(data);
+                            result = false;
+                            return;
+                        }
+                    });
+                }
+
+                var modal = document.getElementById('myModal');
+                var span = document.getElementsByClassName("close")[0];
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+
+
+                $("div.modal").on('click', 'button.modify-municipality', function() {
+                    var tr = $(this).closest('tr')
+                    console.log("tr_id", tr.attr('id'));
+                    var td_c1 = tr.children('td#c1');
+                    var td_c2 = tr.children('td#c2');
+                    var alll = tr.children('td#all');
+
+                    console.log(td_c1.attr('value'));
+                    console.log(td_c2.attr('value'));
+                    console.log(alll.attr('value'));
+
+                    td_c1.replaceWith('<input id="c1" type="number" value="' + td_c1.attr('value') + '"name="c1">');
+                    td_c2.replaceWith('<input id="c2" type="number" value="' + td_c2.attr('value') + '"name="c2">');
+                    $(this).replaceWith('<input id="submit-municipality" type="submit">');
+                });
+
+                $("div.modal").on('click', 'input#submit-municipality', function() {
+                    var tr = $(this).closest('tr');
+                    var c1 = tr.find('input#c1');
+                    var c2 = tr.find('input#c2');
+                    var all = tr.children('td#all').attr('value');
+                    var c1_val = c1.val();
+                    var c2_val = c2.val();
+                    $(this).replaceWith('<button type="button" id="modify-button" class="modify-municipality">Modify</button>');
+
+                    console.log("c1:", c1_val);
+                    console.log("c2:", c2_val);
+                    console.log("all:", all);
+                    console.log("halo halo a id:", tr.attr('id'));
+                    console.log("date:", tr.attr('value'));
+
+
+                    var callback = function(communityId, firstVotes, secondVotes, dateModified, data, result) {
+                        console.log(" w callback");
+                        d = JSON.parse(data);
+                        if (d.result == 'success') {
+                                console.log('uwaga, lecimy');
+                                console.log(d.gmina_nazwa);
+                                console.log('data:' + d.date_modified + ' !');
+                                console.log('za tym');
+                                result = true;
+                            } else {
+                                console.log("jestem tutej")
+                                console.log(d.pierwsza);
+                                console.log(d.druga);
+                                result = false;
+                            }
+
+                        if (result) {
+                            alert("Modyfikacja powiodła się");
+                            c1.replaceWith('<td id="c1"     value="' + c1_val + '">' + c1_val + '</td>');
+                            c2.replaceWith('<td id="c2" value="' + c2_val + '">' + c2_val + '</td>');
+                            tr.attr('value', d.date_modified);
+{#                            var real_div =#}
+                        } else {
+                            alert("Modyfikcja nie powiodła się, zamknij modalne okno");
+                        }
+                    };
+
+                    var result;
+                    submit(tr.attr('id'), c1_val, c2_val, all, tr.attr('value'), result, callback);
+                });
+
+                $("table#wojewodztwa").find("tr").click(function () {
+                        {% if user.is_authenticated %}
+                        $.ajax({
+                            type: "GET",
+                            url: "/projekt_zaliczeniowy/modale_przez_wojewodztwo/" + this.id,
+                            error: function (data) {
+                                alert('Error:' + data);
+                                console.log('wynik' + data);
+                            },
+                            success: function (data) {
+                                console.log('wynik' + data);
+                                var municipalities = JSON.parse(data);
+
+                                $("table.modal-table").replaceWith(createTable(municipalities));
+                                modal.style.display = "block";
+                                table = "";
+                            }
+                        });
+                    {% endif %}
+                });
+
+                $("table#rodzaj").find("tr.type").click(function () {
+                    {% if user.is_authenticated %}
+                        $.ajax({
+                            type: "GET",
+                            url: "/projekt_zaliczeniowy/modale_przez_rodzaj/" + this.id,
+                            error: function (data) {
+                                alert('Error:' + data);
+                                console.log('wynik' + data);
+                            },
+                            success: function (data) {
+                                console.log('wynik' + data);
+                                var municipalities = JSON.parse(data);
+
+                                $("table.modal-table").replaceWith(createTable(municipalities));
+                                modal.style.display = "block";
+                                table = "";
+                            }
+                        });
+                    {% endif %}
+                });
+
+                $("table#rodzaj").find("tr.size").click(function () {
+                    {% if user.is_authenticated %}
+                        $.ajax({
+                            type: "GET",
+                            url: "/projekt_zaliczeniowy/modale_przez_rozmiar/" + this.id,
+                            error: function (data) {
+                                alert('Error:' + data);
+                                console.log('wynik' + data);
+                            },
+                            success: function (data) {
+                                console.log('wynik' + data);
+                                var municipalities = JSON.parse(data);
+
+                                $("table.modal-table").replaceWith(createTable(municipalities));
+                                modal.style.display = "block";
+                                table = "";
+                            }
+                        });
+                    {% endif %}
+                });
+            });
+    })(jQuery);
+    </script>
+
+    {% if user.is_authenticated %}
+        <script>
+        $(document).ready(function() {
+            document.getElementById("login").style.display = 'none';
+            document.getElementById("password").style.display = 'none';
+            document.getElementById("login_button").value = "Wyloguj się";
+        });
+        </script>
+    {% endif %}
+</head>
+<body>
+
+    <h4 id="poczatek"> Wyniki głosowania</h4>
+    <input id="login" type="text" name="firstname" placeholder="Login">{% csrf_token %}
+    <input id="password" type="password" name="firstname" placeholder="Hasło">{% csrf_token %}
+    <input id="login_button" type="button" onclick="logFunction()" value="Zaloguj się">{% csrf_token %}
+
+    <script type="text/javascript">
+        pokaz_wyniki();
+    </script>
+
+    <div id="wyniki">
+    </div>
+{#    <div id="chart_div"></div>#}
+{##}
+{#    <table id="wojewodztwa">#}
+{#        <tr>#}
+{#            <th rowspan="2" class="mobile">Nazwa</th>#}
+{#            <th rowspan="2" class="niezawsze">Liczba głosów ważnych</th>#}
+{#            <th colspan="2" class="kand_mobile">{{ kandydaci.0 }}</th>#}
+{#            <th class="niezawsze" rowspan="2">Liczba głosów: na kandydata/ważnych [%]</th>#}
+{#            <th colspan="2" class="kand_mobile">{{ kandydaci.1 }}</th>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <th>Liczba</th>#}
+{#            <th >%</th>#}
+{#            <th >%</th>#}
+{#            <th>Liczba</th>#}
+{#        </tr>#}
+{##}
+{##}
+{#        {% for woj, tup  in slownik.items %}#}
+{#            <tr id="{{ woj.id }}">#}
+{#                <td class="mobile">{{ woj.nazwa }}</td>#}
+{#                <td>{{ tup.0 }}</td>#}
+{#                <td class="niezawsze">{{ tup.1 }}</td>#}
+{#                <td>{{ tup.2 }}</td>#}
+{#                {% if tup.2 %}#}
+{#                    <td class="niezawsze"><meter id="pojedynek" value="{{ tup.2 }}" max="100"></meter></td>#}
+{#                {% else %}#}
+{#                    <td class="niezawsze" ><meter id="pojedynek" value="50" max="100"></meter></td>#}
+{#                {% endif %}#}
+{#                <td>{{ tup.4 }}</td>#}
+{#                <td>{{ tup.3 }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        <tr style="color: red"  >#}
+{#            <td class="mobile">RAZEM</td>#}
+{#            <td>{{ ogolem.0 }}</td>#}
+{#            <td class="niezawsze">{{ ogolem.1 }}</td>#}
+{#            <td >{{ ogolem.2 }}</td>#}
+{#            {% if ogolem.2 %}#}
+{#                    <td class="niezawsze" ><meter id="pojedynek" value="{{ ogolem.2 }}" max="100"></meter></td>#}
+{#            {% else %}#}
+{#                    <td class="niezawsze" ><meter id="pojedynek" value="50" max="100"></meter></td>#}
+{#            {% endif %}#}
+{#            <td>{{ ogolem.4 }}</td>#}
+{#                <td>{{ ogolem.3 }}</td>#}
+{#        </tr>#}
+{#    </table>#}
+{#    <br>#}
+{#    <table id="rodzaj">#}
+{#        <tr>#}
+{#            <th rowspan="2" >Podział</th>#}
+{#            <th rowspan="2" class="niezawsze">Liczba głosów ważnych</th>#}
+{#            <th colspan="2">{{ kandydaci.0 }}</th>#}
+{#            <th class="niezawsze" rowspan="2">Liczba głosów: na kandydata/ważnych [%]</th>#}
+{#            <th colspan="2">{{ kandydaci.1 }}</th>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <th>Liczba</th>#}
+{#            <th>%</th>#}
+{#            <th>%</th>#}
+{#            <th>Liczba</th>#}
+{#        </tr>#}
+{#        {% for podzial in podzialy %}#}
+{#            <tr class="type" id="{{ podzial.2 }}">#}
+{#                <td>{{ podzial.0 }}</td>#}
+{#                <td>{{ podzial.1.0 }}</td>#}
+{#                <td class="niezawsze">{{ podzial.1.1 }}</td>#}
+{#                <td>{{ podzial.1.2 }}</td>#}
+{#                    {% if podzial.1.2 %}#}
+{#                        <td class="niezawsze" ><meter id="pojedynek" value="{{ podzial.1.2 }}" max="100"></meter></td>#}
+{#                    {% else %}#}
+{#                        <td class="niezawsze" ><meter id="pojedynek" value="50" max="100"></meter></td>#}
+{#                    {% endif %}#}
+{#                <td>{{ podzial.1.4 }}</td>#}
+{#                <td>{{ podzial.1.3 }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        <td colspan="7">Porównanie wyników głosowania na kandydatów w zależności od liczby mieszkańców gminy	</td>#}
+{#        {% for podzial in ludnosc %}#}
+{#            <tr class="size" id="{{ podzial.2 }}">#}
+{#            <td > {{ podzial.0 }}</td>#}
+{#            <td>{{ podzial.1.0 }}</td>#}
+{#            <td class="niezawsze">{{ podzial.1.1 }}</td>#}
+{#            <td>{{ podzial.1.2 }}</td>#}
+{#                {% if podzial.1.2 %}#}
+{#                    <td class="niezawsze" ><meter id="pojedynek" value="{{ podzial.1.2 }}" max="100"></meter></td>#}
+{#                {% else %}#}
+{#                    <td class="niezawsze" ><meter id="pojedynek" value="50" max="100"></meter></td>#}
+{#                {% endif %}#}
+{#            <td>{{ podzial.1.4 }}</td>#}
+{#            <td>{{ podzial.1.3 }}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
+{##}
+{#    <div id="myModal" class="modal">#}
+{##}
+{#      <!-- Modal content -->#}
+{#      <div class="modal-content">#}
+{#        <div class="modal-header">#}
+{#          <span class="close">×</span>#}
+{##}
+{#        </div>#}
+{#        <div class="modal-body">#}
+{#          <table class="modal-table"></table>#}
+{#        </div>#}
+{#        <div class="modal-footer">#}
+{##}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{##}
+{##}
+{##}
+</body>
+</html>

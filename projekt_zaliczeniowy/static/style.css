@@ -1,0 +1,92 @@
+table {
+    width: 100%;
+}
+
+#kandydat_1::-webkit-meter-optimum-value {
+    background: blue;
+}
+
+#kandydat_2::-webkit-meter-optimum-value {
+    background: orange;
+}
+
+.kandydat::-webkit-meter-bar {
+    background: white;
+}
+
+#pojedynek::-webkit-meter-optimum-value {
+    background: blue;
+}
+
+#pojedynek::-webkit-meter-bar {
+    background: orange;
+}
+
+th, td{
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+#wyniki{
+    background-color: lightgray;
+    padding: 4%;
+    border-radius: 5%;
+    text-align: center;
+}
+
+#chart_div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
+}
+
+#poczatek {
+    background-color: darkred;
+    text-align: center;
+    -webkit-text-fill-color: white;
+    padding: 1%;
+}
+
+@media only screen and (min-width: 320px) and (max-device-height: 568px) {
+    body {
+        width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mobile {
+        text-wrap: normal;
+    }
+
+    .nazwa_lub_podzial{
+		display: block;
+	}
+
+    .kand_mobile{
+        column-span: 1;
+    }
+
+    .niezawsze{
+        display: none;
+    }
+
+    #chart_div {
+        display: none;
+    }
+
+    table {
+        width: 100px;
+    }
+}
+
+@media print {
+    .niezawsze {
+        display: none;
+    }
+    .druk {
+        display: none;
+    }
+}

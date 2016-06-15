@@ -1,0 +1,34 @@
+# -*- coding: utf-8 -*-
+from selenium import selenium
+import unittest, time, re
+
+class selenium_remote(unittest.TestCase):
+    def setUp(self):
+        self.verificationErrors = []
+        self.selenium = selenium("localhost", 4444, "*chrome", "http://127.0.0.1:8000/projekt_zaliczeniowy")
+        self.selenium.start()
+    
+    def test_selenium_remote(self):
+        sel = self.selenium
+        sel.open("/projekt_zaliczeniowy/")
+        sel.click("//tr[@id='4']/td[5]")
+        for i in range(60):
+            try:
+                if sel.is_element_present("modify-button"): break
+            except: pass
+            time.sleep(1)
+        else: self.fail("time out")
+        sel.click("id=modify-button")
+        sel.type("id=c2", "201")
+        sel.type("id=c2", "202")
+        sel.type("id=c1", "299")
+        sel.type("id=c1", "298")
+        sel.click("id=submit-municipality")
+        sel.click("id=myModal")
+    
+    def tearDown(self):
+        self.selenium.stop()
+        self.assertEqual([], self.verificationErrors)
+
+if __name__ == "__main__":
+    unittest.main()

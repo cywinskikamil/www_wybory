@@ -1,0 +1,30 @@
+Szanowny Panie Doktorze,
+
+w załączniku wysyłam mój projekt z aplikacji WWW. Dodane rzeczy:
+
+- modal wyskakuje tylko jeśli użytkownik zalogował się
+
+- akutalizowanie danych w modalu po kliknięciu przycisku 'Submit'
+
+- ochrona przed zmianie danych przez dwóch użytkowników jednocześnie, wystarczy
+między kliknięciem w przycisk 'Modify' a kliknięciem 'Submit, otworzyć drugą kartę, zatwierdzić zmiany, a następnie spróbować zmienić w pierwotnej karcie,
+wyskoczy błąd
+
+- testy selenium:
+  po otwarciu strony w Firefoksie i zainstalowaniu plugina Selenium IDE
+
+  1. otworzyć Selenium IDE
+  2. File -> Open Test Suite -> wybrać moj_test_suite w glównym folderze
+  3. ustawić prędkość na średnią (zmienić z fast)
+  4. uruchomić
+
+  testy symulują zalogowanie się do systemu, modyfikowanie danych, wylogowanie
+
+- testy jednostkowe:
+
+  testy w pliku tests_mojetesty.py, 
+
+  sprawdzające działanie funkcji pomocniczych oraz stworzenie gminy
+
+  Dziękuję za cierpliwość wobec mnie, proszę o ewentualne uwagi jeśli brakuje
+  czegoś do zaliczenia projektu.

@@ -1,0 +1,114 @@
+[
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 1,
+    "fields": {
+      "nazwa": "dolnośląskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 2,
+    "fields": {
+      "nazwa": "kujawsko-pomorskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 3,
+    "fields": {
+      "nazwa": "lubelskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 4,
+    "fields": {
+      "nazwa": "lubuskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 5,
+    "fields": {
+      "nazwa": "łódzkie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 6,
+    "fields": {
+      "nazwa": "małopolskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 7,
+    "fields": {
+      "nazwa": "mazowieckie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 8,
+    "fields": {
+      "nazwa": "opolskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 9,
+    "fields": {
+      "nazwa": "podkarpackie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 10,
+    "fields": {
+      "nazwa": "podlaskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 11,
+    "fields": {
+      "nazwa": "pomorskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 12,
+    "fields": {
+      "nazwa": "śląskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 13,
+    "fields": {
+      "nazwa": "świętokrzyskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 14,
+    "fields": {
+      "nazwa": "warmińsko-mazurskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 15,
+    "fields": {
+      "nazwa": "wielkopolskie"
+    }
+  },
+  {
+    "model": "projekt_zaliczeniowy.Wojewodztwo",
+    "pk": 16,
+    "fields": {
+      "nazwa": "zachodniopomorskie"
+    }
+  }
+]
