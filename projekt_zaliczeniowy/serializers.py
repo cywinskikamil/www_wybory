@@ -31,4 +31,4 @@ class WojewodztwoRodzajSerializer(serializers.ModelSerializer):
 class KandydatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kandydat
-        fields = ('id', 'imie', 'nazwisko', 'liczba_glosow')
+        fields = ('id', 'imie', 'nazwisko', 'liczba_glosow', 'wszystkie_glosy')

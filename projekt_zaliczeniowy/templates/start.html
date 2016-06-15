@@ -111,18 +111,17 @@
         kandydaci_namespace = { wszystkie_glosy:0, kandydaci };
 
         function pokazKandydats(kandydats) {
-
-
             console.log(kandydaci_namespace.wszystkie_glosy);
             var table = '<div id="wyniki">';
             for (var i = 0; i < kandydats.length; i++) {
                 kandydaci_namespace.kandydaci[i] = kandydats[i];
+                kandydaci_namespace.wszystkie_glosy = kandydats[i].wszystkie_glosy;
                 table += '<h3>' + kandydats[i].imie + ' ' + kandydats[i].nazwisko + '</h3>';
-                table += '<h4>{#<meter id=kandydat_' + i + ' class="kandydat druk" value=' + kandydats[i].liczba_glosow +#}
-                        {#' max=' + kandydaci_namespace.wszystkie_glosy + '></meter>#} '</h4>';
+                table += '<h4>' + kandydats[i].liczba_glosow + ' <meter id=kandydat_' + i + ' class="kandydat druk" ' +
+                        'value=' + kandydats[i].liczba_glosow + ' max=' + kandydaci_namespace.wszystkie_glosy + '>' +
+                        '</meter> ' + Math.round(kandydats[i].liczba_glosow / kandydats[i].wszystkie_glosy * 10000)/100 + '%</h4>';
             }
             table += '</div>';
-            console.log(table);
             return table;
         }
         function createTable(gminy) {
@@ -131,7 +130,7 @@
                         <tr class=\"woj\" id=\"-1\"><td class=\"woj\" colspan=\"8\">Rozkład głosów w gminach</td></tr>\
                         <tr id=\"-1\">\
                             <th>Gmina</th>\
-                            <th>Liczba głosów ważnych</th>\
+                            <th>Liczba głosów ważnych </th>\
                             <th>Liczba głosów 2  </th>\
                             <th>Procent głosów s </th>\
                             <th>Liczba głosów kandydata/ważnych</th>\
@@ -555,24 +554,22 @@
 {#        {% endfor %}#}
 {#    </table>#}
 {##}
-{#    <div id="myModal" class="modal">#}
-{##}
-{#      <!-- Modal content -->#}
-{#      <div class="modal-content">#}
-{#        <div class="modal-header">#}
-{#          <span class="close">×</span>#}
-{##}
-{#        </div>#}
-{#        <div class="modal-body">#}
-{#          <table class="modal-table"></table>#}
-{#        </div>#}
-{#        <div class="modal-footer">#}
-{##}
-{#        </div>#}
-{#      </div>#}
-{#    </div>#}
-{##}
-{##}
-{##}
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">×</span>
+
+        </div>
+        <div class="modal-body">
+          <table class="modal-table"></table>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>

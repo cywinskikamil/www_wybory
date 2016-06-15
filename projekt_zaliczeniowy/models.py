@@ -94,13 +94,13 @@ class Kandydat(models.Model):
                 result += gmina.liczba_glosow_oddanych_na_kandydata_nr_2
         return result
 
-    # def wszystkie_glosy(self):
-    #     result = 0
-    #     gminy = Gmina.objects.all()
-    #     for gmina in gminy:
-    #         result += gmina.liczba_glosow_oddanych_na_kandydata_nr_1
-    #         result += gmina.liczba_glosow_oddanych_na_kandydata_nr_2
-    #     return result
+    def wszystkie_glosy(self):
+        result = 0
+        gminy = Gmina.objects.all()
+        for gmina in gminy:
+            result += gmina.liczba_glosow_oddanych_na_kandydata_nr_1
+            result += gmina.liczba_glosow_oddanych_na_kandydata_nr_2
+        return result
 
     def __str__(self):
         return self.nazwisko.upper() + " " + self.imie
