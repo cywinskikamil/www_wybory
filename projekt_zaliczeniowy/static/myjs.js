@@ -50,8 +50,7 @@ function pokazKandydats(kandydats) {
 function pokazWojewodztwa(wojewodztwa) {
     var suma = 0;
     var pierwszy = 0;
-    alert('lecimy');
-    var table = '<table id="wojewodztwa"><tr><th rowspan="2" class="mobile">Nazwa</th><th rowspan="2" ' +
+    var table = '<table id="wojew"><tr><th rowspan="2" class="mobile">Nazwa</th><th rowspan="2" ' +
             'class="niezawsze">Liczba głosów ważnych</th><th colspan="2" class="kand_mobile">' +
             kandydaci_namespace.kandydaci[0].imie + ' ' + kandydaci_namespace.kandydaci[0].nazwisko +
             '</th><th class="niezawsze" rowspan="2">Liczba głosów: na kandydata/ważnych [%]' +
@@ -84,7 +83,6 @@ function pokazWojewodztwa(wojewodztwa) {
             '</tr>';
 
     table += '</table>';
-    alert('fajrant');
     return table;
 }
 
@@ -161,6 +159,7 @@ function createTable(gminy) {
             var drugi = gminy[i].liczba_glosow_oddanych_na_kandydata_nr_2;
             var suma = pierwszy + drugi;
             var procent1 = Math.round(pierwszy / suma * 10000)/100;
+            var procent2 = Math.round(drugi / suma * 10000)/100;
             table +=
             '<tr id="' + gminy[i].id + '" value="' + gminy[i].data_modyfikacji + '">' +
                 '<td id="nazwa" value="' + gminy[i].nazwa + '">' + gminy[i].nazwa + '</td>' +
@@ -169,7 +168,7 @@ function createTable(gminy) {
                 '<td>' + procent1 + '</td>' +
                 '<td><progress class="table" max="' + gminy[i].liczba_wydanych_kart +'" value="' + pierwszy + '"></progress>' +
                 '</td>' +
-                '<td>' + (100 - procent1) + '</td>' +
+                '<td>' + procent2 + '</td>' +
                 '<td id="c2" value="' + drugi + '">' + drugi + '</td> ' +
                 '<td id="woj_number" value="' + gminy[i].wojewodztwo_id + '">' +
                 '<button type="button" id="modify-button" class="modify-municipality">Modify</button>' +
@@ -228,7 +227,6 @@ function pokaz_wojewodztwa() {
         processData: false,
         dataType: "json",
         success: function(json) {
-            alert('poszlo');
             var moje_w = $("#wojew");
             $(moje_w).replaceWith(pokazWojewodztwa(json));
             pokaz_rodzaj();
@@ -262,7 +260,6 @@ function pokaz_rodzaj() {
             // console.log('zx');
             var moje_w = $("#rodzaje");
             $(moje_w).replaceWith(pokazRodzaj(json));
-            // console.log('cx');
             pokaz_ludnosc();
         },
         error: function(){
