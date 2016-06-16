@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="698c25b6-5855-445f-b6d7-800ed892912c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/static/myjs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/models.py" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/serializers.py" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/static/style.css" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/templates/start.html" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/templates/start.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/views.py" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/views.py" />
-    </list>
+    <list default="true" id="698c25b6-5855-445f-b6d7-800ed892912c" name="Default" comment="" />
     <ignored path="projekt_zaliczeniowy_1.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
