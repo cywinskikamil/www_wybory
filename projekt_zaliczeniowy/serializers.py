@@ -13,19 +13,19 @@ class GminaSerializer(serializers.ModelSerializer):
 class WojewodztwoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Wojewodztwo
-        fields = ('id', 'nazwa', 'lista_gmin')
+        fields = ('id', 'nazwa', 'suma_glosow', 'wszystko')
 
 
 class WojewodztwoRozmiarSerializer(serializers.ModelSerializer):
     class Meta:
         model = WojewodztwoRozmiar
-        fields = ('id', 'dolny_limit', 'gorny_limit', 'lista_gmin')
+        fields = ('id', 'dolny_limit', 'gorny_limit', 'suma_glosow', 'wszystko')
 
 
 class WojewodztwoRodzajSerializer(serializers.ModelSerializer):
     class Meta:
         model = WojewodztwoRodzaj
-        fields = ('id', 'rodzaj', 'lista_gmin')
+        fields = ('id', 'rodzaj', 'suma_glosow', 'wszystko')
 
 
 class KandydatSerializer(serializers.ModelSerializer):

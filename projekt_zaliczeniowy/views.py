@@ -221,19 +221,9 @@ def start(request):
 #         raise TypeError
 #
 #
-# def policz_procent(liczba_na_1, calosc):
-#     if calosc > 0:
-#         return round(liczba_na_1 * 100 / calosc, 2), round((calosc - liczba_na_1) * 100 / calosc, 2)
-#     return 50, 50
+
 #
 #
-# def liczba_glosow(kolektyw):
-#     liczba = 0
-#     liczba_1 = 0
-#     for obiekt in kolektyw:
-#         liczba_1 += obiekt.liczba_glosow_oddanych_na_kandydata_nr_1
-#         liczba += obiekt.liczba_glosow_oddanych_na_kandydata_nr_1 + obiekt.liczba_glosow_oddanych_na_kandydata_nr_2
-#     procenty = policz_procent(liczba_1, liczba)
-#     return liczba, liczba_1, procenty[0], liczba - liczba_1, procenty[1]
+
 #
 #
