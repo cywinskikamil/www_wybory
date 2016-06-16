@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="698c25b6-5855-445f-b6d7-800ed892912c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/models.py" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/serializers.py" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/static/myjs.js" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/static/myjs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/templates/start.html" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/templates/start.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projekt_zaliczeniowy/urls.py" afterPath="$PROJECT_DIR$/projekt_zaliczeniowy/urls.py" />
     </list>
     <ignored path="projekt_zaliczeniowy_1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myjs.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="myjs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/static/myjs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="198">
               <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
               <folding>
                 <element signature="n#!!block;n#drawMap#0" expanded="false" />
@@ -76,6 +72,26 @@
                 <marker date="1466082530497" expanded="true" signature="8477:9333" ph="..." />
                 <marker date="1466082530497" expanded="true" signature="9180:9311" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="114" column="42" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,11 +131,11 @@
         <option value="$PROJECT_DIR$/projekt_zaliczeniowy/admin.py" />
         <option value="$PROJECT_DIR$/projekt_zaliczeniowy/views.py" />
         <option value="$PROJECT_DIR$/projekt_zaliczeniowy/static/style.css" />
-        <option value="$PROJECT_DIR$/projekt_zaliczeniowy/serializers.py" />
-        <option value="$PROJECT_DIR$/projekt_zaliczeniowy/models.py" />
         <option value="$PROJECT_DIR$/projekt_zaliczeniowy/urls.py" />
         <option value="$PROJECT_DIR$/projekt_zaliczeniowy/templates/start.html" />
         <option value="$PROJECT_DIR$/projekt_zaliczeniowy/static/myjs.js" />
+        <option value="$PROJECT_DIR$/projekt_zaliczeniowy/models.py" />
+        <option value="$PROJECT_DIR$/projekt_zaliczeniowy/serializers.py" />
       </list>
     </option>
   </component>
@@ -480,14 +496,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3057663" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24919614" sideWeight="0.5091047" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8778135" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33440515" sideWeight="0.4908953" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -733,22 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -757,17 +757,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/templates/start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="79" column="58" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/static/myjs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="198">
           <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
             <element signature="n#!!block;n#drawMap#0" expanded="false" />
@@ -790,6 +782,30 @@
             <marker date="1466082530497" expanded="true" signature="8477:9333" ph="..." />
             <marker date="1466082530497" expanded="true" signature="9180:9311" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/templates/start.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="79" column="58" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projekt_zaliczeniowy/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="114" column="42" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>

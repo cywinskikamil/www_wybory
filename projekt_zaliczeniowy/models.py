@@ -108,6 +108,13 @@ class Gmina(models.Model):
     def suma_glosow(self):
         return liczba_glosow([self])
 
+    def clean(self):
+        if self.liczba_glosow_oddanych_na_kandydata_nr_1 < 0 or self.liczba_glosow_oddanych_na_kandydata_nr_2 < 0:
+            raise ValidationError('ujemna liczba glosow')
+        if self.liczba_glosow_oddanych_na_kandydata_nr_1 + self.liczba_glosow_oddanych_na_kandydata_nr_2 > \
+                self.liczba_wydanych_kart:
+            raise ValidationError('niezgodan liczba głosów')
+
 
 class Kandydat(models.Model):
     imie = models.CharField(max_length=20)

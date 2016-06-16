@@ -3,6 +3,11 @@ from projekt_zaliczeniowy.models import Gmina, Wojewodztwo, Kandydat, Wojewodztw
 
 
 class GminaSerializer(serializers.ModelSerializer):
+
+    def validate_liczba_glosow(self):
+        if self.liczba_glosow_oddanych_na_kandydata_nr_1 < 0:
+            raise serializers.ValidationError('asd')
+
     class Meta:
         model = Gmina
         fields = ('id', 'wojewodztwo', 'nazwa', 'rodzaj', 'liczba_mieszkancow', 'liczba_uprawnionych',
