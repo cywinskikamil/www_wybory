@@ -105,6 +105,9 @@ class Gmina(models.Model):
     def __str__(self):
         return self.nazwa + " w " + self.wojewodztwo.nazwa
 
+    def suma_glosow(self):
+        return liczba_glosow([self])
+
 
 class Kandydat(models.Model):
     imie = models.CharField(max_length=20)

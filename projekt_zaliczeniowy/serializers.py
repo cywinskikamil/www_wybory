@@ -7,7 +7,7 @@ class GminaSerializer(serializers.ModelSerializer):
         model = Gmina
         fields = ('id', 'wojewodztwo', 'nazwa', 'rodzaj', 'liczba_mieszkancow', 'liczba_uprawnionych',
                   'liczba_wydanych_kart', 'liczba_glosow_oddanych_na_kandydata_nr_1',
-                  'liczba_glosow_oddanych_na_kandydata_nr_2', 'data_modyfikacji')
+                  'liczba_glosow_oddanych_na_kandydata_nr_2', 'data_modyfikacji', 'suma_glosow')
 
 
 class WojewodztwoSerializer(serializers.ModelSerializer):

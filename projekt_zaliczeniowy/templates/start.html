@@ -12,106 +12,67 @@
     <script type="text/javascript" src="{% static "myjs.js" %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 
-{#                    {% if user.is_authenticated %}#}
-{#                    $.ajax({#}
-{#                        type: "GET",#}
-{#                        url: "/projekt_zaliczeniowy/modale_przez_wojewodztwo/" + this.id,#}
-{#                        error: function (data) {#}
-{#                            alert('Error:' + data);#}
-{#                            console.log('wynik' + data);#}
-{#                        },#}
-{#                        success: function (data) {#}
-{#                            console.log('wynik' + data);#}
-{#                            var municipalities = JSON.parse(data);#}
-{##}
-{#                            $("table.modal-table").replaceWith(createTable(municipalities));#}
-{#                            modal.style.display = "block";#}
-{#                            table = "";#}
-{#                        }#}
-{#                    });#}
-{#                {% endif %}#}
-{#            $("table#rodzaj").find("tr.type").click(function () {#}
-{#                {% if user.is_authenticated %}#}
-{#                    $.ajax({#}
-{#                        type: "GET",#}
-{#                        url: "/projekt_zaliczeniowy/modale_przez_rodzaj/" + this.id,#}
-{#                        error: function (data) {#}
-{#                            alert('Error:' + data);#}
-{#                            console.log('wynik' + data);#}
-{#                        },#}
-{#                        success: function (data) {#}
-{#                            console.log('wynik' + data);#}
-{#                            var municipalities = JSON.parse(data);#}
-{##}
-{#                            $("table.modal-table").replaceWith(createTable(municipalities));#}
-{#                            modal.style.display = "block";#}
-{#                            table = "";#}
-{#                        }#}
-{#                    });#}
-{#                {% endif %}#}
-{#            });#}
+    <script type="text/javascript">
+        $(document).ready(function () {
 
-{#            $("table#rodzaj").find("tr.size").click(function () {#}
-{#                {% if user.is_authenticated %}#}
-{#                    $.ajax({#}
-{#                        type: "GET",#}
-{#                        url: "/projekt_zaliczeniowy/modale_przez_rozmiar/" + this.id,#}
-{#                        error: function (data) {#}
-{#                            alert('Error:' + data);#}
-{#                            console.log('wynik' + data);#}
-{#                        },#}
-{#                        success: function (data) {#}
-{#                            console.log('wynik' + data);#}
-{#                            var municipalities = JSON.parse(data);#}
-{##}
-{#                            $("table.modal-table").replaceWith(createTable(municipalities));#}
-{#                            modal.style.display = "block";#}
-{#                            table = "";#}
-{#                        }#}
-{#                    });#}
-{#                {% endif %}#}
-{#            });#}
-
-{#    {% if user.is_authenticated %}#}
-        <script type="text/javascript">
-
-{#                        $.ajax({#}
-{#                            type: "GET",#}
-{#                            url: "/projekt_zaliczeniowy/modale_przez_rozmiar/" + this.id,#}
-{#                            error: function (data) {#}
-{#                                alert('Error:' + data);#}
-{#                                console.log('wynik' + data);#}
-{#                            },#}
-{#                            success: function (data) {#}
-{#                                console.log('wynik' + data);#}
-{#                                var municipalities = JSON.parse(data);#}
-{##}
-{#                                $("table.modal-table").replaceWith(createTable(municipalities));#}
-{#                                modal.style.display = "block";#}
-{#                                table = "";#}
-{#                            }#}
-
-        (function ($) {
-            $(document).ready(function () {
+            var modal = document.getElementById('myModal');
+            $(document).on('click', '.clickable-woj', function () {
+                $.ajax({
+                    type: "GET",
+                    url: document.URL + 'wojewodztwos/' + this.id,
+                    error: function (data) {
+                        alert('Error:' + data);
+                        console.log('wynik' + data);
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        $("table.modal-table").replaceWith(createTable(data.wszystko));
+                        modal.style.display = "block";
+                        table = "";
+                    }
+                });
+            });
+            $(document).on('click', '.clickable-rodzaj', function () {
+                $.ajax({
+                    type: "GET",
+                    url: document.URL + 'wojewodztwosrodzaj/' + this.id,
+                    error: function (data) {
+                        alert('Error:' + data);
+                        console.log('wynik' + data);
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        $("table.modal-table").replaceWith(createTable(data.wszystko));
+                        modal.style.display = "block";
+                        table = "";
+                    }
+                });
+            });
+            $(document).on('click', '.clickable-rozmiar', function () {
+                $.ajax({
+                    type: "GET",
+                    url: document.URL + 'wojewodztwosrozmiar/' + this.id,
+                    error: function (data) {
+                        alert('Error:' + data);
+                        console.log('wynik' + data);
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        $("table.modal-table").replaceWith(createTable(data.wszystko));
+                        modal.style.display = "block";
+                        table = "";
+                    }
+                });
+            });
+            {% if user.is_authenticated %}
                 document.getElementById("login").style.display = 'none';
                 document.getElementById("password").style.display = 'none';
                 document.getElementById("login_button").value = "Wyloguj się";
-                alert('cokolwke');
-                var tablica = $("#wojew");
-                $(tablica).find("th").click(function () {
-                    alert('asd');
-                });
-                $(tablica).find("tr").click(function () {
-                    alert('asd');
-                });
-                $(tablica).find("td").click(function () {
-                    alert('asd');
-                });
+            {% endif %}
+        });
 
-            });
-        })(jQuery);
-        </script>
-{#    {% endif %}#}
+
+    </script>
 </head>
 <body>
 
@@ -126,48 +87,24 @@
 
     <div id="wyniki">
     </div>
-    <div id="chart_div_not">asd</div>
+    <div id="chart_div_not"></div>
 
     <table id="wojew">
-        <tr><th id="clickable" colspan="5">sdf</th></tr>
+
     </table>
     <br>
-    <table id="rodzaj">
-        <tr>
-            <th rowspan="2" >Podział</th>
-            <th rowspan="2" class="niezawsze">Liczba głosów ważnych</th>
-            <th colspan="2"><span id="kand1"> brak</span></th>
-            <th class="niezawsze" rowspan="2">Liczba głosów: na kandydata/ważnych [%]</th>
-            <th colspan="2"><span id="kand2"> brak</span></th>
-        </tr>
-        <tr>
-            <th>Liczba</th>
-            <th>%</th>
-            <th>%</th>
-            <th>Liczba</th>
-        </tr>
-        <tr id="rodzaje">
+    <table id="rodzaje">
 
-        </tr>
-        <td id="cokolwiek" colspan="7">Porównanie wyników głosowania na kandydatów w zależności od liczby mieszkańców gminy	</td>
-        <tr id="ludnosci">
-
-        </tr>
     </table>
-{##}
+    <br>
+    <table id="ludnosci">
+
+    </table>
+
     <div id="myModal" class="modal">
-
-      <!-- Modal content -->
       <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">×</span>
-
-        </div>
         <div class="modal-body">
           <table class="modal-table"></table>
-        </div>
-        <div class="modal-footer">
-
         </div>
       </div>
     </div>

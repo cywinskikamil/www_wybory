@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^wojewodztwosrodzaj/$', views.WojewodztwoRodzajList.as_view()),
     url(r'^wojewodztwosrodzaj/(?P<pk>[0-9]+)/$', views.WojewodztwoRodzajDetail.as_view()),
     url(r'^wojewodztwosrozmiar/$', views.WojewodztwoRozmiarList.as_view()),
-    url(r'^wojewodztwosrozmiar/(?P<pk>[0-9]+)/$', views.WojewodztwoRodzajDetail.as_view()),
+    url(r'^wojewodztwosrozmiar/(?P<pk>[0-9]+)/$', views.WojewodztwoRozmiarDetail.as_view()),
     url(r'^$', views.start, name='start'),
     url(r'^login', views.login_view, name='login'),
     # url(r'^modale_przez_wojewodztwo/(\d+)/$',
