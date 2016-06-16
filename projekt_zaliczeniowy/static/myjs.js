@@ -1,8 +1,6 @@
 kandydaci = [];
 kandydaci_namespace = { wszystkie_glosy:0, kandydaci };
 
-
-
 function drawMap(dataaa) {
     // alert('zxc');
     google.charts.load('current', {'packages': ['geochart']});
@@ -11,12 +9,9 @@ function drawMap(dataaa) {
     $(hehe).replaceWith('<div id="chart_div")>hoho</div>');
     function drawRegionsMap() {
         var table = [['State', kandydaci_namespace.kandydaci[0].nazwisko, kandydaci_namespace.kandydaci[1].nazwisko]];
-        console.log(dataaa[0]);
         for (var i = 0; i < dataaa.length; i++) {
             table.push([dataaa[i].nazwa, dataaa[i].suma_glosow[2], dataaa[i].suma_glosow[4]]);
         }
-
-        console.log(table);
         var data = google.visualization.arrayToDataTable(table);
         var options = {
             region: 'PL',
@@ -48,7 +43,7 @@ function pokazKandydats(kandydats) {
 function pokazWojewodztwa(wojewodztwa) {
     var suma = 0;
     var pierwszy = 0;
-    var table = '<table id="wojewodztwa"><tr><th rowspan="2" class="mobile">Nazwa</th><th rowspan="2" ' +
+    var table = '<table id="wojewodztwa"><tr><th id="clickable" colspan="5">sdf</th></tr><tr><th rowspan="2" class="mobile">Nazwa</th><th rowspan="2" ' +
             'class="niezawsze">Liczba głosów ważnych</th><th colspan="2" class="kand_mobile">' +
             kandydaci_namespace.kandydaci[0].imie + ' ' + kandydaci_namespace.kandydaci[0].nazwisko +
             '</th><th class="niezawsze" rowspan="2">Liczba głosów: na kandydata/ważnych [%]' +
@@ -213,7 +208,7 @@ function pokaz_wojewodztwa() {
         success: function(json) {
             // alert('working');
             // console.log('before');
-            var moje_w = $("#wojewodztwa");
+            var moje_w = $("#wojew");
             var kand1 = $("#kand1");
             var kand2 = $("#kand2");
             $(moje_w).replaceWith(pokazWojewodztwa(json));
@@ -396,9 +391,17 @@ $(document).ready(function () {
     var modal = document.getElementById('myModal');
     var span = document.getElementsByClassName("close")[0];
 
-    $(document.getElementById('poczatek')).onclick = function () {
-        alert('wojewodztwa');
-    };
+    $(".clickable").hover(function () {
+        console.log('asd');
+    }, function () {
+        console.log('zxc');
+    });
+
+    $("#cokolwiek").hover(function () {
+        console.log('cokolwiek');
+    }, function () {
+
+    });
 
     span.onclick = function () {
         modal.style.display = "none";

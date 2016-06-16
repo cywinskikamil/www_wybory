@@ -72,15 +72,46 @@
 {#                {% endif %}#}
 {#            });#}
 
-    {% if user.is_authenticated %}
-        <script>
-            $(document).ready(function() {
+{#    {% if user.is_authenticated %}#}
+        <script type="text/javascript">
+
+{#                        $.ajax({#}
+{#                            type: "GET",#}
+{#                            url: "/projekt_zaliczeniowy/modale_przez_rozmiar/" + this.id,#}
+{#                            error: function (data) {#}
+{#                                alert('Error:' + data);#}
+{#                                console.log('wynik' + data);#}
+{#                            },#}
+{#                            success: function (data) {#}
+{#                                console.log('wynik' + data);#}
+{#                                var municipalities = JSON.parse(data);#}
+{##}
+{#                                $("table.modal-table").replaceWith(createTable(municipalities));#}
+{#                                modal.style.display = "block";#}
+{#                                table = "";#}
+{#                            }#}
+
+        (function ($) {
+            $(document).ready(function () {
                 document.getElementById("login").style.display = 'none';
                 document.getElementById("password").style.display = 'none';
                 document.getElementById("login_button").value = "Wyloguj się";
+                alert('cokolwke');
+                var tablica = $("#wojew");
+                $(tablica).find("th").click(function () {
+                    alert('asd');
+                });
+                $(tablica).find("tr").click(function () {
+                    alert('asd');
+                });
+                $(tablica).find("td").click(function () {
+                    alert('asd');
+                });
+
             });
+        })(jQuery);
         </script>
-    {% endif %}
+{#    {% endif %}#}
 </head>
 <body>
 
@@ -97,7 +128,8 @@
     </div>
     <div id="chart_div_not">asd</div>
 
-    <table id="wojewodztwa">
+    <table id="wojew">
+        <tr><th id="clickable" colspan="5">sdf</th></tr>
     </table>
     <br>
     <table id="rodzaj">
@@ -117,7 +149,7 @@
         <tr id="rodzaje">
 
         </tr>
-        <td colspan="7">Porównanie wyników głosowania na kandydatów w zależności od liczby mieszkańców gminy	</td>
+        <td id="cokolwiek" colspan="7">Porównanie wyników głosowania na kandydatów w zależności od liczby mieszkańców gminy	</td>
         <tr id="ludnosci">
 
         </tr>
