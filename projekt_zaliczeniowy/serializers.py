@@ -1,12 +1,13 @@
 from rest_framework import serializers
 from projekt_zaliczeniowy.models import Gmina, Wojewodztwo, Kandydat, WojewodztwoRodzaj, WojewodztwoRozmiar
+from django.contrib.auth.models import User
 
 
 class GminaSerializer(serializers.ModelSerializer):
-
-    def validate_liczba_glosow(self):
-        if self.liczba_glosow_oddanych_na_kandydata_nr_1 < 0:
-            raise serializers.ValidationError('asd')
+    def validate(self, attrs):
+        instance = Gmina(**attrs)
+        instance.clean()
+        return instance
 
     class Meta:
         model = Gmina
@@ -37,3 +38,9 @@ class KandydatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kandydat
         fields = ('id', 'imie', 'nazwisko', 'liczba_glosow', 'wszystkie_glosy')
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'password')

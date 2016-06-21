@@ -1,6 +1,10 @@
 kandydaci = [];
 kandydaci_namespace = { wszystkie_glosy:0, kandydaci };
 
+function acutalPercent(part, all) {
+    return Math.round(part * 10000 / all)/100;
+}
+
 function csrfSafeMethod(method) {
         // these HTTP methods do not require CSRF protection
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -33,7 +37,7 @@ function drawMap() {
 }
 
 function pokazKandydats(kandydats) {
-    console.log(kandydaci_namespace.wszystkie_glosy);
+    // console.log(kandydaci_namespace.wszystkie_glosy);
     var table = '<div id="wyniki">';
     for (var i = 0; i < kandydats.length; i++) {
         kandydaci_namespace.kandydaci[i] = kandydats[i];
@@ -41,7 +45,7 @@ function pokazKandydats(kandydats) {
         table += '<h3>' + kandydats[i].imie + ' ' + kandydats[i].nazwisko + '</h3>';
         table += '<h4>' + kandydats[i].liczba_glosow + ' <meter id=kandydat_' + i + ' class="kandydat druk" ' +
                 'value=' + kandydats[i].liczba_glosow + ' max=' + kandydaci_namespace.wszystkie_glosy + '>' +
-                '</meter> ' + Math.round(kandydats[i].liczba_glosow / kandydats[i].wszystkie_glosy * 10000)/100 + '%</h4>';
+                '</meter> ' + acutalPercent(kandydats[i].liczba_glosow, kandydats[i].wszystkie_glosy) + '%</h4>';
     }
     table += '</div>';
     return table;
@@ -67,18 +71,19 @@ function pokazWojewodztwa(wojewodztwa) {
                 '<td>' + wojewodztwa[i].suma_glosow[2] + '</td>' +
                 '<td class="niezawsze"><meter id="pojedynek" value="' +
                 wojewodztwa[i].suma_glosow[2] +'" max="100"></meter></td>' +
-                '<td>' + wojewodztwa[i].suma_glosow[3] + '</td>' +
                 '<td>' + wojewodztwa[i].suma_glosow[4] + '</td>' +
+                '<td>' + wojewodztwa[i].suma_glosow[3] + '</td>' +
                 '</tr>';
     }
-    var percent = Math.round(pierwszy / suma * 10000)/100;
+    var percent = acutalPercent(pierwszy, suma);
+    // console.log((100 - percent));
     table += '<tr style="color: red"><td class="mobile">RAZEM</td>' +
             '<td>' + suma + '</td>' +
             '<td>' + pierwszy + '</td>' +
             '<td>' + percent  + '</td>' +
             '<td class="niezawsze" ><meter id="pojedynek" value="' +
             percent + '" max="100"></meter></td>' +
-            '<td>' + (100 - percent)  + '</td>' +
+            '<td>' + (100 - percent).toFixed(2)  + '</td>' +
             '<td>' + (suma - pierwszy) + '</td>' +
             '</tr>';
 
@@ -104,8 +109,8 @@ function pokazRodzaj(wojewodztwa) {
                 '<td>' + wojewodztwa[i].suma_glosow[2] + '</td>' +
                 '<td class="niezawsze"><meter id="pojedynek" value="' +
                 wojewodztwa[i].suma_glosow[2] +'" max="100"></meter></td>' +
-                '<td>' + wojewodztwa[i].suma_glosow[3] + '</td>' +
                 '<td>' + wojewodztwa[i].suma_glosow[4] + '</td>' +
+                '<td>' + wojewodztwa[i].suma_glosow[3] + '</td>' +
                 '</tr>';
     }
     table += '</table>';
@@ -131,8 +136,8 @@ function pokazRozmiar(wojewodztwa) {
                 '<td>' + wojewodztwa[i].suma_glosow[2] + '</td>' +
                 '<td class="niezawsze"><meter id="pojedynek" value="' +
                 wojewodztwa[i].suma_glosow[2] +'" max="100"></meter></td>' +
-                '<td>' + wojewodztwa[i].suma_glosow[3] + '</td>' +
                 '<td>' + wojewodztwa[i].suma_glosow[4] + '</td>' +
+                '<td>' + wojewodztwa[i].suma_glosow[3] + '</td>' +
                 '</tr>';
     }
     table += '</table>';
@@ -148,9 +153,9 @@ function createTable(gminy) {
                     '<th>Gmina</th>' +
                     '<th>Liczba głosów ważnych </th>' +
                     '<th>Liczba głosów ' + kandydats[0].imie + ' ' + kandydats[0].nazwisko + '</th>' +
-                    '<th>Procent głosów ' + kandydats[0].imie + ' ' + kandydats[0].nazwisko + '</th>' +
+                    '<th>% głosów ' + kandydats[0].imie + ' ' + kandydats[0].nazwisko + '</th>' +
                     '<th>Liczba głosów kandydata/ważnych</th>' +
-                    '<th>Procent głosów ' + kandydats[1].imie + ' ' + kandydats[1].nazwisko + '</th>' +
+                    '<th>% głosów ' + kandydats[1].imie + ' ' + kandydats[1].nazwisko + '</th>' +
                     '<th>Liczba głosów ' + kandydats[1].imie + ' ' + kandydats[1].nazwisko + '</th>' +
                     '<th></th>' +   
                 '</tr>';
@@ -158,17 +163,17 @@ function createTable(gminy) {
             var pierwszy = gminy[i].liczba_glosow_oddanych_na_kandydata_nr_1;
             var drugi = gminy[i].liczba_glosow_oddanych_na_kandydata_nr_2;
             var suma = pierwszy + drugi;
-            var procent1 = Math.round(pierwszy / suma * 10000)/100;
-            var procent2 = Math.round(drugi / suma * 10000)/100;
+            var procent1 = acutalPercent(pierwszy, suma);
+            var procent2 = acutalPercent(drugi, suma);
             table +=
             '<tr id="' + gminy[i].id + '" value="' + gminy[i].data_modyfikacji + '">' +
                 '<td id="nazwa" value="' + gminy[i].nazwa + '">' + gminy[i].nazwa + '</td>' +
                 '<td id="all" value="' + gminy[i].liczba_wydanych_kart + '">' + gminy[i].liczba_wydanych_kart+ '</td>' +
                 '<td id="c1" value="' + pierwszy + '">' + pierwszy + '</td>' +
-                '<td>' + procent1 + '</td>' +
-                '<td><progress class="table" max="' + gminy[i].liczba_wydanych_kart +'" value="' + pierwszy + '"></progress>' +
+                '<td id="p1">' + procent1 + '</td>' +
+                '<td><progress id="procenty" class="table" max="' + gminy[i].liczba_wydanych_kart +'" value="' + pierwszy + '"></progress>' +
                 '</td>' +
-                '<td>' + procent2 + '</td>' +
+                '<td id="p2">' + procent2 + '</td>' +
                 '<td id="c2" value="' + drugi + '">' + drugi + '</td> ' +
                 '<td id="woj_number" value="' + gminy[i].wojewodztwo_id + '">' +
                 '<button type="button" id="modify-button" class="modify-municipality">Modify</button>' +
@@ -190,7 +195,7 @@ function pokaz_wyniki() {
             }
         }
     });
-    console.log('wyniki');
+    // console.log('wyniki');
     $.ajax({
         type:'GET',
         url: 'kandydats/',
@@ -219,7 +224,7 @@ function pokaz_wojewodztwa() {
         }
     });
 
-    console.log('wojewodztwa');
+    // console.log('wojewodztwa');
     $.ajax({
         type:'GET',
         url: 'wojewodztwos/',
@@ -248,7 +253,7 @@ function pokaz_rodzaj() {
             }
         }
     });
-    console.log('rodzaj');
+    // console.log('rodzaj');
     $.ajax({
         type:'GET',
         url: 'wojewodztwosrodzaj/',
@@ -278,7 +283,7 @@ function pokaz_ludnosc() {
             }
         }
     });
-    console.log('ludnosc');
+    // console.log('ludnosc');
     $.ajax({
         type:'GET',
         url: 'wojewodztwosrozmiar/',
@@ -294,57 +299,10 @@ function pokaz_ludnosc() {
         }
     });
 }
-
-function logFunction() {
-var csrftoken = $.cookie('csrftoken');
-function csrfSafeMethod(method) {
-    // these HTTP methods do not require CSRF protection
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-}
-
-$.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        }
-    }
-});
-
-$.ajax({
-    type:"POST",
-    url:"/projekt_zaliczeniowy/login/",
-    data: JSON.stringify({
-        'username': document.getElementById("login").value,
-        'password': document.getElementById("password").value}),
-    contentType: "application/json",
-    processData: false,
-    success:function(data){
-        d = JSON.parse(data);
-        if (d.action == 'login') {
-            if (d.result == 'success') {
-                document.getElementById("login").style.display = 'none';
-                document.getElementById("password").style.display = 'none';
-                document.getElementById("login_button").value = "Wyloguj się";
-                alert('Zostałeś pomyślnie zalogowany.');
-            } else {
-                alert('Błędny login lub hasło.');
-            }
-        } else {
-            document.getElementById("login").style.display = '';
-            document.getElementById("password").style.display = '';
-            document.getElementById("login_button").value = "Zaloguj się";
-            alert('Zostałeś pomyślnie wylogowany.');
-        }
-    },
-    error:function(data){
-        alert('POST error');
-        console.log(data);
-    }
-});
-}
-
 $(document).ready(function () {
     drawMap();
+    // console.log('uwaga');
+    // console.log(acutalPercent(2, 3));
     var modal = document.getElementById('myModal');
     var span = document.getElementsByClassName("close")[0];
 
@@ -371,13 +329,6 @@ $(document).ready(function () {
                 }
             }
         });
-        console.log(communityId);
-        console.log(firstVotes);
-        console.log(secondVotes);
-        console.log(allVotes);
-        console.log(dateModified);
-        console.log(wojew);
-        console.log(nazwa);
 
         $.ajax({
             type:"PUT",
@@ -399,25 +350,25 @@ $(document).ready(function () {
                 }
             },
             error:function(data){
-                alert('POST error');
-                console.log(data);
+                alert((data.responseJSON['non_field_errors'][0]));
                 result = false;
                 return;
-            }
+            },
+
         });
     }
 
 
     $("div.modal").on('click', 'button.modify-municipality', function() {
         var tr = $(this).closest('tr')
-        console.log("tr_id", tr.attr('id'));
+        // console.log("tr_id", tr.attr('id'));
         var td_c1 = tr.children('td#c1');
         var td_c2 = tr.children('td#c2');
         var alll = tr.children('td#all');
 
-        console.log(td_c1.attr('value'));
-        console.log(td_c2.attr('value'));
-        console.log(alll.attr('value'));
+        // console.log(td_c1.attr('value'));
+        // console.log(td_c2.attr('value'));
+        // console.log(alll.attr('value'));
 
         td_c1.replaceWith('<input id="c1" type="number" value="' + td_c1.attr('value') + '"name="c1">');
         td_c2.replaceWith('<input id="c2" type="number" value="' + td_c2.attr('value') + '"name="c2">');
@@ -428,28 +379,26 @@ $(document).ready(function () {
         var tr = $(this).closest('tr');
         var c1 = tr.find('input#c1');
         var c2 = tr.find('input#c2');
+        var p1 = tr.find('td#p1');
+        var p2 = tr.find('td#p2');
         var all = tr.children('td#all').attr('value');
+        var procenty = tr.find('progress#procenty');
         var c1_val = c1.val();
         var c2_val = c2.val();
         var wojew = tr.children('td#woj_number').attr('value');
         var nazwa = tr.children('td#nazwa').attr('value');
         $(this).replaceWith('<button type="button" id="modify-button" class="modify-municipality">Modify</button>');
 
-        console.log("c1:", c1_val);
-        console.log("c2:", c2_val);
-        console.log("all:", all);
-        console.log("halo halo a id:", tr.attr('id'));
-        console.log("date:", tr.attr('value'));
-        console.log("woj:", wojew);
-        console.log("nazwa:", nazwa);
-
-
         var callback = function(firstVotes, secondVotes, dateModified) {
             console.log(" w callback");
 
-
             c1.replaceWith('<td id="c1" value="' + firstVotes + '">' + firstVotes + '</td>');
             c2.replaceWith('<td id="c2" value="' + secondVotes + '">' + secondVotes + '</td>');
+            procenty.attr('value', firstVotes);
+
+            var procent = acutalPercent(firstVotes, +firstVotes + +secondVotes).toFixed(2);
+            p1.replaceWith('<td id="p1">' + procent + '</td>');
+            p2.replaceWith('<td id="p2">' + (100 - procent).toFixed(2) + '</td>');
             tr.attr('value', dateModified);
             pokaz_wyniki();
         };

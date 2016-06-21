@@ -1,5 +1,4 @@
-from django.conf.urls import url
-
+from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
@@ -13,17 +12,12 @@ urlpatterns = [
     url(r'^wojewodztwosrodzaj/(?P<pk>[0-9]+)/$', views.WojewodztwoRodzajDetail.as_view()),
     url(r'^wojewodztwosrozmiar/$', views.WojewodztwoRozmiarList.as_view()),
     url(r'^wojewodztwosrozmiar/(?P<pk>[0-9]+)/$', views.WojewodztwoRozmiarDetail.as_view()),
+    url(r'^users/$', views.UserList.as_view()),
+    url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view()),
     url(r'^$', views.start, name='start'),
     url(r'^login', views.login_view, name='login'),
-    # url(r'^modale_przez_wojewodztwo/(\d+)/$',
-    #     views.modale_przez_wojewodztwo,
-    #     name='modale_przez_wojewodztwo'),
-    # url(r'^modale_przez_rodzaj/(\w+)/$',
-    #     views.modale_przez_rodzaj,
-    #     name='modale_przez_rodzaj'),
-    # url(r'^modale_przez_rozmiar/(\d+)/(\d+)/$',
-    #     views.modale_przez_rozmiar,
-    #     name='modale_przez_rozmiar'),
-    #
-    # url(r'^submit', views.submit, name='submit'),
+]
+
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

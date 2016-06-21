@@ -16,70 +16,75 @@
         $(document).ready(function () {
 
             var modal = document.getElementById('myModal');
-            $(document).on('click', '.clickable-woj', function () {
-                $.ajax({
-                    type: "GET",
-                    url: document.URL + 'wojewodztwos/' + this.id,
-                    error: function (data) {
-                        alert('Error:' + data);
-                        console.log('wynik' + data);
-                    },
-                    success: function (data) {
-                        console.log(data);
-                        $("table.modal-table").replaceWith(createTable(data.wszystko));
-                        modal.style.display = "block";
-                        table = "";
-                    }
-                });
-            });
-            $(document).on('click', '.clickable-rodzaj', function () {
-                $.ajax({
-                    type: "GET",
-                    url: document.URL + 'wojewodztwosrodzaj/' + this.id,
-                    error: function (data) {
-                        alert('Error:' + data);
-                        console.log('wynik' + data);
-                    },
-                    success: function (data) {
-                        console.log(data);
-                        $("table.modal-table").replaceWith(createTable(data.wszystko));
-                        modal.style.display = "block";
-                        table = "";
-                    }
-                });
-            });
-            $(document).on('click', '.clickable-rozmiar', function () {
-                $.ajax({
-                    type: "GET",
-                    url: document.URL + 'wojewodztwosrozmiar/' + this.id,
-                    error: function (data) {
-                        alert('Error:' + data);
-                        console.log('wynik' + data);
-                    },
-                    success: function (data) {
-                        console.log(data);
-                        $("table.modal-table").replaceWith(createTable(data.wszystko));
-                        modal.style.display = "block";
-                        table = "";
-                    }
-                });
-            });
             {% if user.is_authenticated %}
+                $(document).on('click', '.clickable-woj', function () {
+                    $.ajax({
+                        type: "GET",
+                        url: document.URL + 'wojewodztwos/' + this.id,
+                        error: function (data) {
+                            alert('Error:' + data);
+                            console.log('wynik' + data);
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            $("table.modal-table").replaceWith(createTable(data.wszystko));
+                            modal.style.display = "block";
+                            table = "";
+                        }
+                    });
+                });
+                $(document).on('click', '.clickable-rodzaj', function () {
+                    $.ajax({
+                        type: "GET",
+                        url: document.URL + 'wojewodztwosrodzaj/' + this.id,
+                        error: function (data) {
+                            alert('Error:' + data);
+                            console.log('wynik' + data);
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            $("table.modal-table").replaceWith(createTable(data.wszystko));
+                            modal.style.display = "block";
+                            table = "";
+                        }
+                    });
+                });
+                $(document).on('click', '.clickable-rozmiar', function () {
+                    $.ajax({
+                        type: "GET",
+                        url: document.URL + 'wojewodztwosrozmiar/' + this.id,
+                        error: function (data) {
+                            alert('Error:' + data);
+                            console.log('wynik' + data);
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            $("table.modal-table").replaceWith(createTable(data.wszystko));
+                            modal.style.display = "block";
+                            table = "";
+                        }
+                    });
+                });
+
                 document.getElementById("login").style.display = 'none';
-                document.getElementById("password").style.display = 'none';
-                document.getElementById("login_button").value = "Wyloguj się";
+
             {% endif %}
         });
-
-
     </script>
 </head>
 <body>
 
     <h4 id="poczatek"> Wyniki głosowania</h4>
-    <input id="login" type="text" name="firstname" placeholder="Login">{% csrf_token %}
-    <input id="password" type="password" name="firstname" placeholder="Hasło">{% csrf_token %}
-    <input id="login_button" type="button" onclick="logFunction()" value="Zaloguj się">{% csrf_token %}
+
+    <button class="btn-default" id="login">
+        <a href="/projekt_zaliczeniowy/api-auth/login/?next=/projekt_zaliczeniowy/">Log in</a>
+    </button>
+    {% if user.is_authenticated %}
+        <h3>Zalogowany jako <span style="color: green">{{ user }}</span></h3>
+        <button class="btn-default">
+            <a href="/projekt_zaliczeniowy/api-auth/logout/?next=/projekt_zaliczeniowy/">Logout</a>
+        </button>
+    {% endif %}
 
     <script type="text/javascript">
         pokaz_wyniki();
