@@ -1,4 +1,4 @@
-# from datetime import datetime
+from datetime import datetime
 import sys, logging
 from rest_framework import serializers
 from projekt_zaliczeniowy.models import Gmina, Wojewodztwo, Kandydat, WojewodztwoRodzaj, WojewodztwoRozmiar
@@ -9,19 +9,14 @@ logger = logging.getLogger(__name__)
 
 class GminaSerializer(serializers.ModelSerializer):
 
-    def validate_data_modyfikacji(self, value):
-
-        logger.error(value)
-        return value
-
     def validate(self, attrs):
-        logger.error('ogolnie')
-        # date = attrs['data_modyfikacji']
-        # gmina = Gmina.objects.get(pk=pk)
-        # if gmina.data_modyfikacji != date:
-        #     raise ValueError
-        # attrs['data_modyfikacji'] = datetime.now().isoformat()
-        # raise serializers.ValidationError('hehe')
+        gmina_d = str(Gmina.objects.get(nazwa=attrs['nazwa']).data_modyfikacji)[:23]
+        gmina_d2 = str(attrs['data_modyfikacji'])[:23]
+
+        if gmina_d != gmina_d2:
+            logger.error('no nie')
+            raise serializers.ValidationError('Dane zmodyfikowane wcześniej przez kogoś innego o godzinie' + gmina_d)
+        attrs['data_modyfikacji'] = datetime.now()
         instance = Gmina(**attrs)
         instance.clean()
         return attrs

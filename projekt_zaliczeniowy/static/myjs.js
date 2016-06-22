@@ -292,6 +292,7 @@ function pokaz_ludnosc() {
         dataType: "json",
         success: function(json) {
             var moje_w = $("#ludnosci");
+            localStorage.setItem("rozmiar", json);
             $(moje_w).replaceWith(pokazRozmiar(json));
         },
         error: function(){
@@ -335,8 +336,8 @@ $(document).ready(function () {
             type:"PUT",
             url: document.URL + 'gminas/' + communityId + '/',
             data: JSON.stringify({
-                'wojewodztwo': wojew,
                 'id': communityId,
+                'wojewodztwo': wojew,
                 'nazwa': nazwa,
                 'liczba_wydanych_kart': allVotes,
                 'liczba_glosow_oddanych_na_kandydata_nr_1': firstVotes,

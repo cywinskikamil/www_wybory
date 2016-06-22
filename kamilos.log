@@ -123,3 +123,708 @@ Traceback (most recent call last):
   File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 14, in validate
     logger.error(attrs['id'])
 KeyError: 'id'
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 71, in update
+    return Response(serializer.data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 503, in data
+    ret = super(Serializer, self).data
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 239, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 472, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/fields.py", line 1073, in to_representation
+    value = value.isoformat()
+AttributeError: 'str' object has no attribute 'isoformat'
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 71, in update
+    return Response(serializer.data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 503, in data
+    ret = super(Serializer, self).data
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 239, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 472, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/fields.py", line 1073, in to_representation
+    value = value.isoformat()
+AttributeError: 'str' object has no attribute 'isoformat'
+Internal Server Error: /projekt_zaliczeniowy/gminas/23/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 407, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 439, in to_internal_value
+    validated_value = validate_method(validated_value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 13, in validate_data_modyfikacji
+    logger.error(self.get_attribute())
+TypeError: get_attribute() missing 1 required positional argument: 'instance'
+Internal Server Error: /projekt_zaliczeniowy/gminas/10/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 18, in validate
+    loger.error(attrs.get('id'))
+NameError: name 'loger' is not defined
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 21, in validate
+    woje = Wojewodztwo.get.objects(nazwa=nazwa)
+AttributeError: type object 'Wojewodztwo' has no attribute 'get'
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 21, in validate
+    woje = Wojewodztwo.objects.get(nazwa=nazwa)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/query.py", line 387, in get
+    self.model._meta.object_name
+projekt_zaliczeniowy.models.DoesNotExist: Wojewodztwo matching query does not exist.
+Internal Server Error: /projekt_zaliczeniowy/gminas/9/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 14, in validate
+    gmina_d = Gmina.objects.get(nazwa=attrs['nazwa']).data_modyfikacji
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/query.py", line 391, in get
+    (self.model._meta.object_name, num)
+projekt_zaliczeniowy.models.MultipleObjectsReturned: get() returned more than one Gmina -- it returned 2!
+Internal Server Error: /projekt_zaliczeniowy/gminas/9/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 14, in validate
+    gmina_d = Gmina.objects.get(nazwa=attrs['nazwa']).data_modyfikacji
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/query.py", line 391, in get
+    (self.model._meta.object_name, num)
+projekt_zaliczeniowy.models.MultipleObjectsReturned: get() returned more than one Gmina -- it returned 2!
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 15, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 15, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 15, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 15, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 15, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 15, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 15, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 71, in update
+    return Response(serializer.data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 503, in data
+    ret = super(Serializer, self).data
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 239, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 472, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/fields.py", line 1073, in to_representation
+    value = value.isoformat()
+AttributeError: 'str' object has no attribute 'isoformat'
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 71, in update
+    return Response(serializer.data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 503, in data
+    ret = super(Serializer, self).data
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 239, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 472, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/fields.py", line 1073, in to_representation
+    value = value.isoformat()
+AttributeError: 'str' object has no attribute 'isoformat'
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 15, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 16, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 19, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 17, in validate
+    logger.error(str(gmina_d) + '|' + attrs['data_modyfikacji'])
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 19, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 19, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 19, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 19, in validate
+    raise serializers.ValidationError('Dane zmodyfikowane przez kogoś innego o godzinie' + gmina_d)
+TypeError: Can't convert 'datetime.datetime' object to str implicitly
+Internal Server Error: /projekt_zaliczeniowy/gminas/9/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 13, in validate
+    gmina_d = str(Gmina.objects.get(nazwa=attrs['nazwa']).data_modyfikacji)[:23]
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/query.py", line 391, in get
+    (self.model._meta.object_name, num)
+projekt_zaliczeniowy.models.MultipleObjectsReturned: get() returned more than one Gmina -- it returned 2!
+Internal Server Error: /projekt_zaliczeniowy/gminas/10/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 13, in validate
+    gmina_d = str(Gmina.objects.get(nazwa=attrs['nazwa']).data_modyfikacji)[:23]
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/manager.py", line 122, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/db/models/query.py", line 391, in get
+    (self.model._meta.object_name, num)
+projekt_zaliczeniowy.models.MultipleObjectsReturned: get() returned more than one Gmina -- it returned 2!
