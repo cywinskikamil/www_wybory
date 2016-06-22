@@ -1,0 +1,125 @@
+Internal Server Error: /projekt_zaliczeniowy/gminas/11/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 14, in validate
+    logger.error(attrs['id'])
+KeyError: 'id'
+Internal Server Error: /projekt_zaliczeniowy/gminas/10/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 14, in validate
+    logger.error(attrs['id'])
+KeyError: 'id'
+Internal Server Error: /projekt_zaliczeniowy/gminas/9/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 14, in validate
+    logger.error(attrs.get('id', instance.id))
+AttributeError: 'NoneType' object has no attribute 'id'
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 14, in validate
+    logger.error(self.get('id'))
+AttributeError: 'GminaSerializer' object has no attribute 'get'
+Internal Server Error: /projekt_zaliczeniowy/gminas/8/
+Traceback (most recent call last):
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 466, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/views.py", line 463, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/generics.py", line 289, in put
+    return self.update(request, *args, **kwargs)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/mixins.py", line 69, in update
+    serializer.is_valid(raise_exception=True)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 213, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/nolaan/Studia/WWW/pythonik3.5/lib/python3.5/site-packages/rest_framework/serializers.py", line 410, in run_validation
+    value = self.validate(value)
+  File "/home/nolaan/Studia/WWW/PARYS_WWW/projekt_zaliczeniowy_1/projekt_zaliczeniowy/serializers.py", line 14, in validate
+    logger.error(attrs['id'])
+KeyError: 'id'

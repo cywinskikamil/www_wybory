@@ -1,13 +1,13 @@
-import simplejson
-from django.http import HttpResponse
+import logging
 from django.shortcuts import render
 from rest_framework import generics, permissions
-from django.contrib.auth import authenticate, login as django_login, logout as django_logout
 from django.contrib.auth.models import User
 
 from projekt_zaliczeniowy.models import Gmina, Wojewodztwo, Kandydat, WojewodztwoRozmiar, WojewodztwoRodzaj
 from projekt_zaliczeniowy.serializers import GminaSerializer, WojewodztwoSerializer, KandydatSerializer, \
     WojewodztwoRodzajSerializer, WojewodztwoRozmiarSerializer, UserSerializer
+
+logger = logging.getLogger(__name__)
 
 
 class GminaList(generics.ListCreateAPIView):
@@ -78,28 +78,6 @@ class UserList(generics.ListAPIView):
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-
-def login_view(request):
-    if request.method == "POST":
-        if request.user.is_authenticated():
-            django_logout(request)
-            return_dict = {'action': 'logout', 'result': 'success'}
-            json = simplejson.dumps(return_dict)
-            return HttpResponse(json)
-        else:
-            data = simplejson.loads(request.body)
-            username = data['username']
-            password = data['password']
-
-            return_dict = {'action': 'login', 'result': 'failure'}
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                django_login(request, user)
-                return_dict = {'action': 'login', 'result': 'success'}
-
-            json = simplejson.dumps(return_dict)
-            return HttpResponse(json)
 
 
 def start(request):

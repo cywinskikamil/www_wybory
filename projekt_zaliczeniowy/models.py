@@ -111,9 +111,13 @@ class Gmina(models.Model):
     def clean(self):
         if self.liczba_glosow_oddanych_na_kandydata_nr_1 < 0 or self.liczba_glosow_oddanych_na_kandydata_nr_2 < 0:
             raise ValidationError('ujemna liczba glosow')
+        if self.liczba_glosow_oddanych_na_kandydata_nr_1 + self.liczba_glosow_oddanych_na_kandydata_nr_2 < \
+                self.liczba_wydanych_kart:
+            raise ValidationError('zbyt mala liczba głosów')
         if self.liczba_glosow_oddanych_na_kandydata_nr_1 + self.liczba_glosow_oddanych_na_kandydata_nr_2 > \
                 self.liczba_wydanych_kart:
-            raise ValidationError('niezgodan liczba głosów')
+            raise ValidationError('zbyt duza liczba glosow')
+        return self
 
 
 class Kandydat(models.Model):

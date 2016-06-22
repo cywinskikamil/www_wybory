@@ -299,6 +299,7 @@ function pokaz_ludnosc() {
         }
     });
 }
+
 $(document).ready(function () {
     drawMap();
     // console.log('uwaga');
@@ -340,17 +341,20 @@ $(document).ready(function () {
                 'liczba_wydanych_kart': allVotes,
                 'liczba_glosow_oddanych_na_kandydata_nr_1': firstVotes,
                 'liczba_glosow_oddanych_na_kandydata_nr_2': secondVotes,
-                'date_modified': dateModified}),
+                'data_modyfikacji': dateModified}),
             contentType: "application/json",
             processData: false,
             success:function(data){
                 console.log('tutaj');
+                console.log(dateModified);
                 if(callback) {
                     callback(firstVotes, secondVotes, allVotes);
                 }
             },
             error:function(data){
-                alert((data.responseJSON['non_field_errors'][0]));
+                var alerto = data.responseJSON['non_field_errors'][0];
+                // console.log(alerto);
+                alert(alerto);
                 result = false;
                 return;
             },
@@ -361,15 +365,9 @@ $(document).ready(function () {
 
     $("div.modal").on('click', 'button.modify-municipality', function() {
         var tr = $(this).closest('tr')
-        // console.log("tr_id", tr.attr('id'));
         var td_c1 = tr.children('td#c1');
         var td_c2 = tr.children('td#c2');
-        var alll = tr.children('td#all');
-
-        // console.log(td_c1.attr('value'));
-        // console.log(td_c2.attr('value'));
-        // console.log(alll.attr('value'));
-
+        
         td_c1.replaceWith('<input id="c1" type="number" value="' + td_c1.attr('value') + '"name="c1">');
         td_c2.replaceWith('<input id="c2" type="number" value="' + td_c2.attr('value') + '"name="c2">');
         $(this).replaceWith('<input id="submit-municipality" type="submit">');

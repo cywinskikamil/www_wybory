@@ -1,13 +1,30 @@
+# from datetime import datetime
+import sys, logging
 from rest_framework import serializers
 from projekt_zaliczeniowy.models import Gmina, Wojewodztwo, Kandydat, WojewodztwoRodzaj, WojewodztwoRozmiar
 from django.contrib.auth.models import User
 
+logger = logging.getLogger(__name__)
+
 
 class GminaSerializer(serializers.ModelSerializer):
+
+    def validate_data_modyfikacji(self, value):
+
+        logger.error(value)
+        return value
+
     def validate(self, attrs):
+        logger.error('ogolnie')
+        # date = attrs['data_modyfikacji']
+        # gmina = Gmina.objects.get(pk=pk)
+        # if gmina.data_modyfikacji != date:
+        #     raise ValueError
+        # attrs['data_modyfikacji'] = datetime.now().isoformat()
+        # raise serializers.ValidationError('hehe')
         instance = Gmina(**attrs)
         instance.clean()
-        return instance
+        return attrs
 
     class Meta:
         model = Gmina
