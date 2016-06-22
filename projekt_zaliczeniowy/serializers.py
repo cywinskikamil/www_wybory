@@ -10,9 +10,9 @@ logger = logging.getLogger(__name__)
 class GminaSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
+        gmina = Gmina.objects.get(nazwa=attrs['nazwa'])
         gmina_d = str(Gmina.objects.get(nazwa=attrs['nazwa']).data_modyfikacji)[:23]
         gmina_d2 = str(attrs['data_modyfikacji'])[:23]
-
         if gmina_d != gmina_d2:
             logger.error('no nie')
             raise serializers.ValidationError('Dane zmodyfikowane wcześniej przez kogoś innego o godzinie' + gmina_d)

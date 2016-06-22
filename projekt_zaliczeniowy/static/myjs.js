@@ -186,6 +186,13 @@ function createTable(gminy) {
     }
 
 function pokaz_wyniki() {
+    var moje_w = $("#wyniki");
+    var json = JSON.parse(localStorage.getItem("wyniki"));
+    $(moje_w).replaceWith(pokazKandydats(json));
+    pokaz_wojewodztwa();
+}
+
+function pokaz_wyniki_on() {
     var csrftoken = $.cookie('csrftoken');
 
     $.ajaxSetup({
@@ -203,17 +210,24 @@ function pokaz_wyniki() {
         processData: false,
         dataType: "json",
         success: function(json) {
-            var moje_w = $("#wyniki");
-            $(moje_w).replaceWith(pokazKandydats(json));
-            pokaz_wojewodztwa();
+            localStorage.setItem("wyniki", JSON.stringify(json));
+            pokaz_wojewodztwa_on();
         },
         error: function(){
-            alert('nieudalosie');
+            alert('nie udalo sie');
         }
     });
 }
 
 function pokaz_wojewodztwa() {
+    var moje_w = $("#wojew");
+    var json = JSON.parse(localStorage.getItem("wojew"));
+    $(moje_w).replaceWith(pokazWojewodztwa(json));
+    pokaz_rodzaj();
+    updateMap(json);
+}
+
+function pokaz_wojewodztwa_on() {
     var csrftoken = $.cookie('csrftoken');
 
     $.ajaxSetup({
@@ -232,18 +246,22 @@ function pokaz_wojewodztwa() {
         processData: false,
         dataType: "json",
         success: function(json) {
-            var moje_w = $("#wojew");
-            $(moje_w).replaceWith(pokazWojewodztwa(json));
-            pokaz_rodzaj();
-            updateMap(json);
+            localStorage.setItem("wojew", JSON.stringify(json));
+            pokaz_rodzaj_on();
         },
         error: function(){
-            alert('nieudalosieeng');
+            alert('nie udalo sie');
         }
     });
 }
 
 function pokaz_rodzaj() {
+    var moje_w = $("#rodzaje");
+    $(moje_w).replaceWith(pokazRodzaj(JSON.parse(localStorage.getItem("rodzaj"))));
+    pokaz_ludnosc();
+}
+
+function pokaz_rodzaj_on() {
     var csrftoken = $.cookie('csrftoken');
 
     $.ajaxSetup({
@@ -253,7 +271,6 @@ function pokaz_rodzaj() {
             }
         }
     });
-    // console.log('rodzaj');
     $.ajax({
         type:'GET',
         url: 'wojewodztwosrodzaj/',
@@ -261,19 +278,21 @@ function pokaz_rodzaj() {
         processData: false,
         dataType: "json",
         success: function(json) {
-            // alert('nada');
-            // console.log('zx');
-            var moje_w = $("#rodzaje");
-            $(moje_w).replaceWith(pokazRodzaj(json));
-            pokaz_ludnosc();
+            localStorage.setItem("rodzaj", JSON.stringify(json));
+            pokaz_ludnosc_on();
         },
         error: function(){
-            alert('nieudieeng');
+            alert('nie udalo sie');
         }
     });
 }
 
 function pokaz_ludnosc() {
+    var moje_w = $("#ludnosci");
+    $(moje_w).replaceWith(pokazRozmiar(JSON.parse(localStorage.getItem("rozmiar"))));
+}
+
+function pokaz_ludnosc_on() {
     var csrftoken = $.cookie('csrftoken');
 
     $.ajaxSetup({
@@ -283,7 +302,6 @@ function pokaz_ludnosc() {
             }
         }
     });
-    // console.log('ludnosc');
     $.ajax({
         type:'GET',
         url: 'wojewodztwosrozmiar/',
@@ -291,24 +309,32 @@ function pokaz_ludnosc() {
         processData: false,
         dataType: "json",
         success: function(json) {
-            var moje_w = $("#ludnosci");
-            localStorage.setItem("rozmiar", json);
-            $(moje_w).replaceWith(pokazRozmiar(json));
+            localStorage.setItem("rozmiar", JSON.stringify(json));
+            pokaz_wyniki();
         },
         error: function(){
-            alert('nieudieeng');
+            alert('nie udalo sie');
         }
     });
 }
 
+
 $(document).ready(function () {
     drawMap();
-    // console.log('uwaga');
-    // console.log(acutalPercent(2, 3));
+    var status = $("h3#status");
+
+    if (navigator.onLine) {
+        console.log('navigator_online');
+        pokaz_wyniki_on();
+        status.replaceWith('<h3 id="status" style="color:green">ONLINE</h3>')
+    } else {
+        pokaz_wyniki();
+        status.replaceWith('<h3 id="status" style="color:red">OFFLINE</h3>')
+    }
+
     var modal = document.getElementById('myModal');
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -325,7 +351,7 @@ $(document).ready(function () {
         }
 
         $.ajaxSetup({
-            beforeSend: function(xhr, settings) {
+            beforeSend: function (xhr, settings) {
                 if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
                     xhr.setRequestHeader("X-CSRFToken", csrftoken);
                 }
@@ -333,7 +359,7 @@ $(document).ready(function () {
         });
 
         $.ajax({
-            type:"PUT",
+            type: "PUT",
             url: document.URL + 'gminas/' + communityId + '/',
             data: JSON.stringify({
                 'id': communityId,
@@ -342,19 +368,20 @@ $(document).ready(function () {
                 'liczba_wydanych_kart': allVotes,
                 'liczba_glosow_oddanych_na_kandydata_nr_1': firstVotes,
                 'liczba_glosow_oddanych_na_kandydata_nr_2': secondVotes,
-                'data_modyfikacji': dateModified}),
+                'data_modyfikacji': dateModified
+            }),
             contentType: "application/json",
             processData: false,
-            success:function(data){
+            success: function (data) {
                 console.log('tutaj');
                 console.log(dateModified);
-                if(callback) {
+                if (callback) {
                     callback(firstVotes, secondVotes, allVotes);
                 }
             },
-            error:function(data){
+            error: function (data) {
+                console.log('alerto');
                 var alerto = data.responseJSON['non_field_errors'][0];
-                // console.log(alerto);
                 alert(alerto);
                 result = false;
                 return;
@@ -364,14 +391,15 @@ $(document).ready(function () {
     }
 
 
-    $("div.modal").on('click', 'button.modify-municipality', function() {
+    $("div.modal").on('click', 'button.modify-municipality', function () {
         var tr = $(this).closest('tr')
         var td_c1 = tr.children('td#c1');
         var td_c2 = tr.children('td#c2');
-        
-        td_c1.replaceWith('<input id="c1" type="number" value="' + td_c1.attr('value') + '"name="c1">');
-        td_c2.replaceWith('<input id="c2" type="number" value="' + td_c2.attr('value') + '"name="c2">');
-        $(this).replaceWith('<input id="submit-municipality" type="submit">');
+        if (navigator.onLine) {
+            td_c1.replaceWith('<input id="c1" type="number" value="' + td_c1.attr('value') + '"name="c1">');
+            td_c2.replaceWith('<input id="c2" type="number" value="' + td_c2.attr('value') + '"name="c2">');
+            $(this).replaceWith('<input id="submit-municipality" type="submit">');
+        }
     });
 
     $("div.modal").on('click', 'input#submit-municipality', function() {
@@ -399,12 +427,30 @@ $(document).ready(function () {
             p1.replaceWith('<td id="p1">' + procent + '</td>');
             p2.replaceWith('<td id="p2">' + (100 - procent).toFixed(2) + '</td>');
             tr.attr('value', dateModified);
-            pokaz_wyniki();
+            pokaz_wyniki_on();
         };
 
         var result;
         submit(tr.attr('id'), c1_val, c2_val, all, tr.attr('value'), wojew, nazwa, result, callback);
     });
 
+    window.addEventListener('load', function () {
+
+        function updateOnlineStatus() {
+            var status = $("h3#status");
+            status.replaceWith('<h3 id="status" style="color:green">ONLINE</h3>')
+            console.log('jestem online');
+            pokaz_wyniki_on();
+        }
+
+        function updateOfflineStatus() {
+            var status = $("h3#status");
+            console.log('jestem offline')
+            status.replaceWith('<h3 id="status" style="color:red">OFFLINE</h3>')
+        }
+
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOfflineStatus);
+    })
 });
 

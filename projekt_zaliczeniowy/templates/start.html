@@ -76,19 +76,14 @@
 
     <h4 id="poczatek"> Wyniki głosowania</h4>
 
-    <button class="btn-default" id="login">
-        <a href="/projekt_zaliczeniowy/api-auth/login/?next=/projekt_zaliczeniowy/">Log in</a>
-    </button>
     {% if user.is_authenticated %}
         <h3>Zalogowany jako <span style="color: green">{{ user }}</span></h3>
-        <button class="btn-default">
             <a href="/projekt_zaliczeniowy/api-auth/logout/?next=/projekt_zaliczeniowy/">Logout</a>
-        </button>
+    {% else %}
+        <a href="/projekt_zaliczeniowy/api-auth/login/?next=/projekt_zaliczeniowy/">Log in</a>
     {% endif %}
 
-    <script type="text/javascript">
-        pokaz_wyniki();
-    </script>
+    <h3 id="status"></h3>
 
     <div id="wyniki">
     </div>
